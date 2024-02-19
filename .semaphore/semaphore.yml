@@ -72,6 +72,8 @@ blocks:
             - python manage.py test tasks.tests.test_browser
     dependencies:
       - Run Unit Tests
+    run:
+      when: branch = 'master'
   - name: Run Security Tests
     task:
       jobs:
