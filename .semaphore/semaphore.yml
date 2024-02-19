@@ -70,10 +70,12 @@ blocks:
         - name: Browser Test
           commands:
             - python manage.py test tasks.tests.test_browser
+      agent:
+        machine:
+          type: e1-standard-2
+          os_image: ubuntu2004
     dependencies:
       - Run Unit Tests
-    run:
-      when: branch = 'master'
   - name: Run Security Tests
     task:
       jobs:
